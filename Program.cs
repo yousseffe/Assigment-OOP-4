@@ -186,8 +186,30 @@ namespace Assigment_OOP_4
                 emp03.Department.Name = "Sales";
 
                 Console.WriteLine(emp01);
-                Console.WriteLine(emp03);*/ 
+                Console.WriteLine(emp03);*/
             #endregion
+
+            int[] Numbers = { 7, 2, 1, 6, 9, 8, 4, 3 };
+
+            Array.Sort(Numbers);
+
+            Employee[] employees =
+            {
+                new Employee() { Id = 10, Name = "omar", Salary = 3000, Department = new Department { Id = 1, Name = "Hr" } },
+                new Employee() { Id = 20, Name = "omar", Salary = 10000, Department = new Department { Id = 1, Name = "Hr" } },
+                new Employee() { Id = 30, Name = "omar", Salary = 5000, Department = new Department { Id = 1, Name = "Hr" } },
+                new Employee() { Id = 50, Name = "omar", Salary = 200, Department = new Department { Id = 1, Name = "Hr" } }
+            };
+            Array.Sort(employees);
+
+            foreach (var num in Numbers)
+            {
+                Console.WriteLine(num);
+            }
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee);
+            }
         }
     }
 }

@@ -10,7 +10,10 @@ namespace Assigment_OOP_4.IClonable
     {
         public string Name { get; set; }
         public int Id { get; set; }
-
+        public Department()
+        {
+            
+        }
         public object Clone()
         {
             return new Department(this);
@@ -27,7 +30,7 @@ namespace Assigment_OOP_4.IClonable
             return $"Id : {Id} , Name : {Name} ";
         }
     }
-        internal class Employee : ICloneable
+        internal class Employee : ICloneable , IComparable 
     {
         public int Id { get; set; }
 
@@ -40,7 +43,7 @@ namespace Assigment_OOP_4.IClonable
         public object Clone()
         {
             return new Employee(this);
-            
+
         }
         public Employee(Employee employee)
         {
@@ -49,9 +52,22 @@ namespace Assigment_OOP_4.IClonable
             this.Salary = employee.Salary;
             this.Department = (Department)employee.Department.Clone();
         }
+
+        public Employee()
+        {
+        }
+
         public override string ToString()
         {
             return $"Id : {Id} , Name : {Name} , Salary : {Salary} , Department : {Department}";
         }
+
+        public int CompareTo(object? obj)
+        {
+            Employee employee = (Employee)obj;
+            return this.Salary.CompareTo(employee.Salary);
+        }
+
+        
     }
 }
