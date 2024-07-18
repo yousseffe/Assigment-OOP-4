@@ -1,4 +1,5 @@
-﻿using Assigment_OOP_4.Interface;
+﻿using Assigment_OOP_4.IClonable;
+using Assigment_OOP_4.Interface;
 using Assigment_OOP_4.Interface03;
 using System.Text;
 
@@ -154,7 +155,38 @@ namespace Assigment_OOP_4
             Console.WriteLine("After change");
             Console.WriteLine(Name01[0]);
             Console.WriteLine(Name02[0]);*/
-            #endregion 
+            #endregion
+            #endregion
+
+            #region ICloneable
+            /*Employee emp01 = new Employee()
+                {
+                    Id = 1,
+                    Name = "Ali",
+                    Salary = 3000,
+                    Department = new Department() { Id = 1 , Name = "Hr" },
+                };
+                Employee emp02 = new Employee()
+                {
+                    Id = 2,
+                    Name = "Ali",
+                    Salary = 5000
+                };
+                Console.WriteLine($"hashcode of emp01 = {emp01.GetHashCode()}");
+                Console.WriteLine($"hashcode of emp02 = {emp02.GetHashCode()}");
+
+                Employee emp03 = emp01; //shallow copy 
+
+                emp03 = (Employee)emp01.Clone(); // Deep copy
+
+                Console.WriteLine("After shallow copy");
+                Console.WriteLine($"hashcode of emp01 = {emp01.GetHashCode()}");
+                Console.WriteLine($"hashcode of emp02 = {emp02.GetHashCode()}");
+
+                emp03.Department.Name = "Sales";
+
+                Console.WriteLine(emp01);
+                Console.WriteLine(emp03);*/ 
             #endregion
         }
     }
